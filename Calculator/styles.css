@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, white 10%, rgb(189, 187, 187) 95%);
+}
+
+/* estilos del titulo y texto*/
+
+/* Contenedor del título */
+.calc-title {
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 50px;
+    
+
+}
+
+/* Cabecera del desplegable */
+.title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    
+}
+
+.title-header h1 {
+    font-size: 1.8rem;
+    margin: 0px auto;
+    }
+
+/* Flecha */
+.title-header .arrow {
+    font-size: 1.5rem !important;
+    color: rgb(10, 10, 10) !important;
+    text-align: right !important;
+    
+}
+
+/* Contenido oculto */
+.title-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.95rem;
+    color: #555;
+    transition: max-height 0.35s ease;
+    margin-top: 0;
+    
+}
+
+.title-content strong {
+    color: #000;
+}
+
+/* Cuando está abierto */
+.title-content.open {
+    max-height: 280px; 
+    margin-top: 10px;
+}
+
+/* Rotar flecha */
+.calc-title.active .arrow {
+    transform: rotate(180deg);
+}
+
+
+.calculator {
+    width: 320px;
+    background: #222;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.display {
+    background: #000;
+    color: #0f0;
+    text-align: right;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 10px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#resultDisplay {
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+#operationDisplay{
+    font-size: 0.9rempx;
+    opacity: .7;
+    margin-top: 4%;
+    
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn {
+    padding: 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+.fn {
+    background: #c0392b;
+}
+
+.fn:hover {
+    background: #e74c3c;
+}
+
+.op {
+    background: #2980b9;
+}
+
+.op:hover {
+    background: #3498db;
+}
+
+.equal {
+    background: #27ae60;
+    grid-row: span 2;
+}
+
+.equal:hover {
+    background: #2ecc71;
+}
+
+.zero {
+    grid-column: span 2;
+}

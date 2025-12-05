@@ -1,133 +1,194 @@
 body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
 
-        .calculator {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+.calculator {
+    background-color: #333;
+    padding: 15px;       /* reducido de 20px */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
 
-        #pantalla {
-            background-color: #222;
-            color: #0f0;
-            font-size: 2em;
-            padding: 20px;
-            padding-bottom: 5px;
-            border-radius: 5px;
-            text-align: right;
-            min-height: 30px;
-        }
-        #displayOperation{
-           
-           background-color: #222;
-            color: #0f0;
-            font-size: 0.9rem;
-            padding: 5px 20px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            text-align: right;
-            min-height: 18px;
-        }
+#pantalla {
+    background-color: #222;
+    color: #0f0;
+    font-size: 1.5em;    /* reducido de 2em */
+    padding: 15px;       /* reducido de 20px */
+    padding-bottom: 4px;
+    border-radius: 5px;
+    text-align: right;
+    min-height: 25px;    /* reducido de 30px */
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
+#displayOperation {
+    background-color: #222;
+    color: #0f0;
+    font-size: 0.8rem;   /* reducido de 0.9rem */
+    padding: 4px 15px;   /* reducido de 5px 20px */
+    margin-bottom: 8px;  /* reducido de 10px */
+    border-radius: 5px;
+    text-align: right;
+    min-height: 16px;    /* reducido de 18px */
+}
 
-        .btn {
-            padding: 20px;
-            font-size: 1.5em;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;           /* reducido de 10px */
+}
 
-        .btn:hover {
-            background-color: #777;
-        }
+.btn {
+    padding: 15px;       /* reducido de 20px */
+    font-size: 1.2em;    /* reducido de 1.5em */
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
-        .btn:active {
-            background-color: #444;
-        }
+.btn:hover {
+    background-color: #777;
+}
 
-        .operador {
-            background-color: #ff9500;
-        }
+.btn:active {
+    background-color: #444;
+}
 
-        .operador:hover {
-            background-color: #ffb143;
-        }
+.operador {
+    background-color: #ff9500;
+}
 
-        .especial {
+.operador:hover {
+    background-color: #ffb143;
+}
 
-            background-color: #d32f2f;
-        
-        }
+.especial {
+    background-color: #d32f2f;
+}
 
-        .especial:hover {
-            background-color: #f44336;
-        }
+.especial:hover {
+    background-color: #f44336;
+}
 
-        #igual {
-            grid-column: 4;
-            grid-row: 4 / 6;
-            background-color: #4caf50;
-        }
+#igual {
+    grid-column: 4;
+    grid-row: 4 / 6;
+    background-color: #4caf50;
+}
 
-        #igual:hover {
-            background-color: #66bb6a;
-        }
-        #cero{ 
-            grid-column: span 2;
-        }
+#igual:hover {
+    background-color: #66bb6a;
+}
 
-        .hidden {
+#cero { 
+    grid-column: span 2;
+}
+
+.hidden {
     display: none;
-   }
+}
 
-    #scientificPanel {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-    }
+#scientificPanel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;          /* reducido de 6px */
+    margin-bottom: 8px;
+    margin-top: 8px;
+    max-height: 0;
+    opacity: 0;
+}
 
 #scientificPanel:not(.hidden) {
-    max-height: 200px;
+    max-height: 180px; /* reducido de 200px */
     opacity: 1;
-    
 }
+
 .scientific {
-    padding: 12px;
-    font-size: 1.1em;
+    padding: 10px;      /* reducido de 12px */
+    font-size: 0.75rem; /* reducido de 0.8rem */
     background-color: #4a4a4a;
+    min-height: 35px;   /* reducido de 40px */
 }
 
 .scientific:hover {
     background-color: #666;
 }
-.sci{
-    width: 83px;
-    height: 40px;
-    padding: 5px;
-    font-size: .9rem;
-    margin-top: 15px;
+
+.sciButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;           /* reducido de 5px */
 }
 
+.sci {
+    height: 35px;       /* reducido de 40px */
+    padding: 4px;       /* reducido de 5px */
+    font-size: 0.85rem; /* reducido de 0.9rem */
+    margin-top: 12px;   /* reducido de 15px */
+}
+
+.btn.especial.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* estilos del titulo y texto */
+.calc-title {
+    width: 500px;       /* reducido de 600px */
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 12px;  /* reducido de 10px 15px */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 40px;       /* reducido de 50px */
+}
+
+.title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 4px;   /* reducido de 5px 5px */
+}
+
+.title-header h1 {
+    font-size: 1.5rem;  /* reducido de 1.8rem */
+    margin: 0px auto;
+}
+
+.title-header .arrow {
+    font-size: 1.3rem !important; /* reducido de 1.5rem */
+    color: rgb(10, 10, 10) !important;
+    text-align: right !important;
+}
+
+.title-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.85rem; /* reducido de 0.95rem */
+    color: #555;
+    transition: max-height 0.35s ease;
+    margin-top: 0;
+}
+
+.title-content strong {
+    color: #000;
+}
+
+.title-content.open {
+    max-height: 250px; /* reducido de 280px */
+    margin-top: 8px;   /* reducido de 10px */
+}
+
+.calc-title.active .arrow {
+    transform: rotate(180deg);
+}
