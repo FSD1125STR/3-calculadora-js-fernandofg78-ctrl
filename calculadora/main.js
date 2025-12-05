@@ -117,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         first = current;
         op = clicked;
         current = '';
-        refreshMainDisplay();
         refreshOperationDisplay();
         return;
       }
@@ -127,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
         first = String(inter);
         op = clicked;
         current = '';
-        refreshMainDisplay();
         refreshOperationDisplay();
         return;
       }
