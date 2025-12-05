@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let justComputed = false;
 
   // --- MODOS ---
-  const MODES = {
+  const modes = {
     sci: ['sin', 'cos', 'tan', '√', 'x²', 'π'],
     math: ['log', 'ln', 'x³', '1/x', '|x|', 'e']
   };
@@ -176,13 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- FUNCIONES CIENTÍFICAS ---
   resetScientificButtons();
   setMode('sci');
-  if (scientificPanel.classList.contains('hiddenn')) scientificPanel.classList.remove('hiddenn');
+ 
   if (scientificPanel.classList.contains('hidden')) scientificPanel.classList.remove('hidden');
-  
-  function setMode(mode) {
+    function setMode(mode) {
     resetScientificButtons();
-    if (MODES[mode]) {
-      MODES[mode].forEach((txt, i) => {
+    if (modes[mode]) {
+      modes[mode].forEach((txt, i) => {
         const b = sciButtons[i];
         if (!b) return;
         b.textContent = txt;
@@ -232,6 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+// ... TITULO Y TEXTO INFO ....
 const calculator = document.querySelector('.calculator')
 const createTitle = () => {
     const head = document.createElement('div');

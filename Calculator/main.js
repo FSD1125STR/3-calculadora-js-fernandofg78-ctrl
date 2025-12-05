@@ -1,13 +1,11 @@
 
 
 const calculator = document.querySelector('.calculator');
-let buttonsDiv;//variable declarada al iniico porque al crear su appendchuld desde la funcion correspondiente no existia y daba error.
-
-
+let buttonsDiv;//variable declarada al inico porque al crear su appendchild desde la funcion correspondiente no existia y daba error.
 
 
 const createDisplay = () => {
-        const display = document.createElement('div');
+    const display = document.createElement('div');
     display.className = 'display';
 
     const resultDisplay = document.createElement('div');
