@@ -257,7 +257,8 @@ const createTitle = () => {
         científicas, actualizando los botones dinámicamente.<br><br>
 
         Todo el comportamiento se gestiona mediante eventos y lógica interna que construye y evalúa 
-        cada operación paso a paso. `;
+        cada operación paso a paso.
+        </br> También he hecho una  <a href='./Calculator/index.html'>Calculadora desde JS</a>  `;
 
     head.appendChild(title);
     head.appendChild(text);

@@ -48,10 +48,9 @@ const createButtons = () => {
         const numberArr = ['0','1','2','3','4','5','6','7','8','9','.'];
         const operationArr = ['×','÷','+','-'];
 
-        // Limpio SIEMPRE inicio con btn
-        buttonInput.className = 'btn';
+         buttonInput.className = 'btn'; //Ponemos la clase botón
 
-        if (numberArr.includes(btn))
+        if (numberArr.includes(btn)) //si está en el srr de numeros añado clase num
             buttonInput.classList.add('num');
 
         if (btn === '0')
@@ -96,7 +95,7 @@ let fullOperation = '';
 let equalSwitch = false;
 let lastExpression = '';
 
-buttonsDiv.addEventListener('click', (Event)=>{ //se captura el clic de donde venga no hay que poner oncliclk en cada boton
+buttonsDiv.addEventListener('click', (Event)=>{ //se captura el clic de donde venga no hay que poner oncliclk en cada tipo de boton
     const btn = Event.target.closest('button');
     if(!btn) return; //si el clink es en algun sitio que no es un boton, se corta la funcion
 
@@ -237,7 +236,8 @@ const createTitle = () => {
         y evalúa la expresión mediante el constructor <strong>Function()</strong>, permitiendo realizar cálculos
         encadenados con prioridad de operadores estándar.</br>
         El resultado se formatea automáticamente gracias a <strong>formatResult()</strong> y la calculadora permite
-        seguir operando partiendo del valor obtenido tras el "=". `;
+        seguir operando partiendo del valor obtenido tras el "=".
+        </br> Aunque tiene menos funciones que la  <a href='../index.html'>Calculadora desde HTML</a> `;
 
     head.appendChild(title);
     head.appendChild(text);
