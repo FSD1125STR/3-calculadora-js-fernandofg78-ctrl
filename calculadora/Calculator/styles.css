@@ -14,9 +14,8 @@ body {
     background: linear-gradient(to bottom, white 10%, rgb(189, 187, 187) 95%);
 }
 
-/* estilos del titulo y texto*/
+/* ===== TITULO SIN DESPLAZAR LA CALCULADORA ===== */
 
-/* Contenedor del título */
 .calc-title {
     width: 600px;
     background: #fff;
@@ -26,58 +25,57 @@ body {
     cursor: pointer;
     transition: 0.3s;
     margin: 50px;
-    
-
+    position: relative; /* CLAVE */
 }
 
-/* Cabecera del desplegable */
 .title-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 5px;
-    
 }
 
 .title-header h1 {
     font-size: 1.8rem;
-    margin: 0px auto;
-    }
-
-/* Flecha */
-.title-header .arrow {
-    font-size: 1.5rem !important;
-    color: rgb(10, 10, 10) !important;
-    text-align: right !important;
-    
+    margin: 0 auto;
 }
 
-/* Contenido oculto */
+.title-header .arrow {
+    font-size: 1.5rem;
+    color: rgb(10, 10, 10);
+}
+
 .title-content {
+    position: absolute;      /* FUERA DEL FLUJO */
+    top: 100%;
+    left: 0;
+    width: 100%;
     max-height: 0;
     overflow: hidden;
     font-size: 0.95rem;
     color: #555;
-    transition: max-height 0.35s ease;
-    margin-top: 0;
-    
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 15px;
+    z-index: 10;
 }
 
 .title-content strong {
     color: #000;
 }
 
-/* Cuando está abierto */
 .title-content.open {
-    max-height: 280px; 
-    margin-top: 10px;
+    max-height: 280px;
+    padding: 10px 15px;
 }
 
-/* Rotar flecha */
 .calc-title.active .arrow {
     transform: rotate(180deg);
 }
 
+/* ===== CALCULADORA ===== */
 
 .calculator {
     width: 320px;
@@ -104,14 +102,12 @@ body {
 #resultDisplay {
     font-size: 2rem;
     font-weight: bold;
-    
 }
 
-#operationDisplay{
-    font-size: 0.9rempx;
+#operationDisplay {
+    font-size: 0.9rem;
     opacity: .7;
     margin-top: 4%;
-    
 }
 
 .buttons {
